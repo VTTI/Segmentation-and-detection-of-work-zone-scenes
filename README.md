@@ -12,10 +12,15 @@
         <pre>cd [repo-name]</pre>
     </li>
     <li>Step 4: Run container from pulled image and mount data volumes
-        <pre>docker run -it --rm -p 9999:8888 -v $(pwd):/opt/app workzone-detection</pre>
+        <pre>docker run -it --rm -p 9999:8888 -v $(pwd):/opt/app vtti/workzone-detection</pre>
     </li>You may get an error <pre>failed: port is already allocated</pre>
-    If so, expose a different port number 
+    If so, expose a different port number
+    <li>If you wish to run the jupyter notebook, type 'jupyter' on the container's terminal</li>
+    <li>On your local machine perform port forwarding using
+        <pre>ssh -N -f -L 9999:localhost:9999 host@server.xyz </pre>
+    </li>
 </ul>
+
 
 
 # Dataset Information
