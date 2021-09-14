@@ -1,0 +1,14 @@
+# configurations for work zone model
+
+WORKZONE_DIR: 'data/Delivery_1_Workzone'
+NONWORKZONE_DIR: 'data/Delivery_2_new'
+OUTPUT_DIR: 'output/unet'
+MODEL: 'UNet'
+BACKBONE: 'efficientnet-b0'
+CUSTOM_IMAGES_PATH: null # path to custom images for testing
+EPOCHS: 50
+LR: 0.001
+RESIZE_SHAPE: (480, 480)
+OPTIMIZER: 'AdamW'
+BATCH_SIZE: 16
+LOG_STEP: 25

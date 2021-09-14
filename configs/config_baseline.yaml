@@ -1,0 +1,14 @@
+# configurations for work zone model
+
+WORKZONE_DIR: 'data/Delivery_1_Workzone'
+NONWORKZONE_DIR: 'data/Delivery_2_new'
+OUTPUT_DIR: 'output/baseline'
+MODEL: 'baseline_resnet18'
+BACKBONE: 'resnet18'
+CUSTOM_IMAGES_PATH: null # path to custom images for testing
+EPOCHS: 25
+LR: 0.0001
+RESIZE_SHAPE: (240, 360)
+OPTIMIZER: 'AdamW'
+BATCH_SIZE: 32
+LOG_STEP: 50
