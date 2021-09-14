@@ -1,6 +1,22 @@
 # Work Zone Detection
 
-#### TODO: Give Details about running container
+# Setting up Docker Environment and Dependencies
+<ul>
+    <li>Step 1: Pull docker image 
+        <pre>docker pull vtti/workzone-detection</pre>
+    </li>
+    <li>Step 2: Clone the repository to local machine 
+        <pre>git clone https://github.com/VTTI/Segmentation-and-detection-of-work-zone-scenes.git</pre>
+    </li>
+    <li>Step 3: cd to local repository 
+        <pre>cd [repo-name]</pre>
+    </li>
+    <li>Step 4: Run container from pulled image and mount data volumes
+        <pre>docker run -it --rm -p 9999:8888 -v $(pwd):/opt/app workzone-detection</pre>
+    </li>You may get an error <pre>failed: port is already allocated</pre>
+    If so, expose a different port number 
+</ul>
+
 
 # Dataset Information
 
@@ -235,5 +251,5 @@ Training Parameters:
 Additional results are present in ./output directory
 
 ## Citation
-[1]<br>
-[2]<br>
+[1]  https://github.com/qubvel/segmentation_models.pytorch <br>
+[2]  https://github.com/pytorch/pytorch<br>
