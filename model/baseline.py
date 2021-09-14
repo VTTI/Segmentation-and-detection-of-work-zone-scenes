@@ -87,13 +87,13 @@ class RunBaseline:
         self.opt = self.get_optimizer(self.optimizer, self.model, self.lr)
         self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(self.opt, mode='max', patience=3, verbose=True)
         self.writer = SummaryWriter(log_dir=os.path.join(self.out_dir, 'runs', f'{self.comment}'))
-        self.train_set, self.test_set, self.val_set, self.weight_workzone, self.weight_tod = dataset_baseline(
-            self.workzone_dir, self.non_workzone_dir, out_dir=self.out_dir, resize_shape=self.resize_shape)
-        self.criterion_zone = nn.CrossEntropyLoss(weight=self.weight_workzone).to(self.device)
-        self.criterion_tod = nn.CrossEntropyLoss(weight=self.weight_tod).to(self.device)
 
         # data loaders
         if (mode == "train") or (mode == "test"):
+            self.train_set, self.test_set, self.val_set, self.weight_workzone, self.weight_tod = dataset_baseline(
+                self.workzone_dir, self.non_workzone_dir, out_dir=self.out_dir, resize_shape=self.resize_shape)
+            self.criterion_zone = nn.CrossEntropyLoss(weight=self.weight_workzone).to(self.device)
+            self.criterion_tod = nn.CrossEntropyLoss(weight=self.weight_tod).to(self.device)
             self.train_loader = DataLoader(self.train_set, batch_size=self.batch_size, shuffle=True, num_workers=8)
             self.val_loader = DataLoader(self.val_set, batch_size=self.batch_size, shuffle=False, num_workers=8)
             self.test_loader = DataLoader(self.test_set, batch_size=self.batch_size, shuffle=False, num_workers=8)
