@@ -24,7 +24,7 @@ def set_seed(seed, device):
 def parse_args():
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-f", help="path to config file", default="./configs/config_baseline.yaml")
-    args.add_argument("--mode", "-m", help="mode to run the U-NET model on",
+    args.add_argument("--mode", "-m", help="mode to run the baseline model on",
                       choices=["train", "test", "test_single"], default="train")
     args.add_argument("--comment", "-c", help="comment for training", default="_")
     args.add_argument("--weight", "-w", help="path to model weights", default=None)
