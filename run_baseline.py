@@ -47,36 +47,36 @@ def load_model(path, comment, mode):
     batch_size = configs[9]
     log_step = configs[10]
 
-    unet = RunBaseline(comment=comment,
-                       workzone_dir=workzone_dir,
-                       non_workzone_dir=non_workzone_dir,
-                       model_name=model_name,
-                       optimizer=optimizer,
-                       num_epochs=epochs,
-                       batch_size=batch_size,
-                       log_step=log_step,
-                       out_dir=output_dir,
-                       lr=lr,
-                       resize_shape=resize_shape,
-                       mode=mode)
+    baseline = RunBaseline(comment=comment,
+                           workzone_dir=workzone_dir,
+                           non_workzone_dir=non_workzone_dir,
+                           model_name=model_name,
+                           optimizer=optimizer,
+                           num_epochs=epochs,
+                           batch_size=batch_size,
+                           log_step=log_step,
+                           out_dir=output_dir,
+                           lr=lr,
+                           resize_shape=resize_shape,
+                           mode=mode)
 
-    return unet
+    return baseline
 
 
 def main():
     path, comment, mode, weight, device = parse_args()
     set_seed(42, device)
-    unet = load_model(path, comment, mode)
+    net = load_model(path, comment, mode)
     if mode == "train":
-        unet.train()
+        net.train()
         print("Testing")
-        unet.test()
+        net.test()
     elif mode == "test":
         # make sure that the weights are present in the output folder
         print("Testing")
-        unet.test()
+        net.test()
     elif mode == "test_single":
-        unet.test_on_single_images(weight=weight)
+        net.test_on_single_images(weight=weight)
 
 
 if __name__ == "__main__":
