@@ -1,3 +1,15 @@
+# Introduction
+
+Traffic behavior in a roadway construction scene has significant safety impact. This project aims to understand a roadway construction scene in terms of roadway object location and visual cues. The work presents two algorithm
+
+1. Classify a an roadway image as workzon and non workzone
+2. Segmentation of object in workzone. 
+
+This work was presented at TRB 2022
+Sundharam, V., Sarkar A., Hickman, J., Abbott, A. " Characterization, Detection, And Segmentation Of Work Zone1scenes From Naturalistic Driving Data", Transportation Research Record (2021, under review) – accepted at TRB Annual meeting 2021
+
+
+
 # Work Zone Detection
 
 # Setting up Docker Environment and Dependencies
