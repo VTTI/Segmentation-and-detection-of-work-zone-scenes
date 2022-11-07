@@ -230,7 +230,35 @@ The best F1 score achieved on testing set of 173 images: 0.611
 Additional results are present in ./output directory
 
 # Model 3: Work zone Classification
-To run the model
+Download the weights for the suitable pre-trained model into the project directory-
+
+ResNet18: https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/LR_0.0001_OPT_AdamW_BATCH_32_SHAPE_%28240%2C%20360%29_clean%20data%20v3_best_weight.pth
+
+ResNext50 (15 epochs): https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/LR_0.0001_OPT_AdamW_BATCH_32_SHAPE_%28240%2C%20360%29_clean%20data%20v4_15_weight.pth
+
+ResNext50 (8 epochs): https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/LR_0.0001_OPT_AdamW_BATCH_32_SHAPE_%28240%2C%20360%29_clean%20data%20v6_8_weight.pth
+
+The config file (`config_baseline.yaml`) currently has ResNet18 as the model. To use ResNext50, use these values in the config-
+<pre>
+MODEL: 'resnext50'
+BACKBONE: 'resnext50'
+</pre>
+
+To run the model-
+(Provide the relative path for the `weight` parameter to where you downloaded the above-mentioned pre-trained model weights.)
+<pre>
+cd /opt/app
+python run_zone_baseline.py \
+--config [optional:path to config file] \
+--mode ['train', 'test', 'test_single'] \
+--comment [optional:any comment while training] \
+--weight [optional:custom path to weight] \
+--device [optional:set device number if you have multiple GPUs]
+</pre>
+
+
+
+To run the previous older version-
 
 <pre>
 cd /opt/app
@@ -241,6 +269,8 @@ python run_baseline.py \
 --weight [optional:custom path to weight] \
 --device [optional:set device number if you have multiple GPUs]
 </pre>
+NOTE: This older version does not support ResNext50
+
 
 
 Training Parameters:
