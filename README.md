@@ -230,13 +230,10 @@ The best F1 score achieved on testing set of 173 images: 0.611
 Additional results are present in ./output directory
 
 # Model 3: Work zone Classification
-Download the weights for the suitable pre-trained model into the project directory-
-
-ResNet18: https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/LR_0.0001_OPT_AdamW_BATCH_32_SHAPE_%28240%2C%20360%29_clean%20data%20v3_best_weight.pth
-
-ResNext50 (15 epochs): https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/LR_0.0001_OPT_AdamW_BATCH_32_SHAPE_%28240%2C%20360%29_clean%20data%20v4_15_weight.pth
-
-ResNext50 (8 epochs): https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/LR_0.0001_OPT_AdamW_BATCH_32_SHAPE_%28240%2C%20360%29_clean%20data%20v6_8_weight.pth
+Download the weights for the suitable pre-trained model into the project directory-<br/>
+- [ResNet18](https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/workzoneDetection_model1%28ResNet18%29.pth)<br/>
+- [ResNext50 (15 epochs)](https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/workzoneDetection_model2%28ResNext50_15epochs%29.pth)<br/>
+- [ResNext50 (8 epochs)](https://mirror.vtti.vt.edu/vtti/ctbs/workzone_detection/workzoneDetection_model3%28ResNext50_8epochs%29.pth)
 
 The config file (`config_baseline.yaml`) currently has ResNet18 as the model. To use ResNext50, use these values in the config-
 <pre>
